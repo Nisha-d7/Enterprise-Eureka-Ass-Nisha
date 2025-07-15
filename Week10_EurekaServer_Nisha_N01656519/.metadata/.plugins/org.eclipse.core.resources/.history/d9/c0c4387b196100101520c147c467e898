@@ -1,0 +1,20 @@
+package com.week10.nisha;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class RibbonClientController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping("/callRestServer")
+    public String callServer() {
+//        return restTemplate.getForObject("http://rest-server/info", String.class);
+    	 String data = restTemplate.getForObject("http://rest-server/info", String.class);
+         return "<h2 style='color:blue;'>📡 Ribbon Client called REST Server successfully:</h2><p>" + data + "</p>";
+    }
+}

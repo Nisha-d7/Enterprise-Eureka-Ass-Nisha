@@ -1,0 +1,14 @@
+server.port=8081
+spring.application.name=rest-server
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+
+# Expose all actuator endpoints
+management.endpoints.web.exposure.include=*
+
+# Enable info endpoint
+management.endpoint.info.enabled=true
+
+# Optional info shown at /actuator/info
+info.app.name=RestRibbonServer
+info.app.version=1.0.0
